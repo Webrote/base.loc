@@ -1,0 +1,83 @@
+// .nav
+// 	& ul
+// 		margin 0
+// 		padding 0
+// 		clearfix()	
+// 		& li
+// 			// position relative
+// 			display block
+			
+// 			@media (min-width $screen-sm-min)
+// 				float left
+
+// 			& a
+// 				display inline-block
+
+.nav
+	& ul
+		margin 0
+		padding 0
+		display flex
+		justify-content space-between
+		flex-direction column
+		
+		@media (min-width $screen-sm-min)
+			flex-direction row
+			
+		@media (min-width $screen-md-min)
+			justify-content flex-end 
+
+			
+		& li
+			// position relative
+			// display block
+			
+			// @media (min-width $screen-sm-min)
+			// 	float left
+
+			& a
+				display inline-block
+				
+nav.collapse
+	@media (min-width $screen-sm-min)
+		display block !important
+	
+	@media (max-width $screen-xs-max)
+		display none
+		margin-left ceil($grid-gutter-width / -2)
+		margin-right ceil($grid-gutter-width / -2)
+		
+.nav-tabs
+	clearfix()
+	margin 0
+	padding 0
+	list-style none !important
+	border-bottom 1px solid $nav-tabs-border-color
+	
+	& > li
+		@media (min-width $screen-sm-min)
+			float left
+			margin-bottom -1px
+		
+		& > a
+			display block
+			margin-right 2px
+			padding 10px 15px
+			border 1px solid transparent
+			border-radius $border-radius-base $border-radius-base 0 0
+			text-decoration none
+			
+			&:hover
+				background-color #eee
+				// border-color $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color
+			
+		&.active > a
+			&,
+			&:hover,
+			&:focus
+				color $nav-tabs-active-link-hover-color
+				background-color $nav-tabs-active-link-hover-bg
+				border 1px solid $nav-tabs-active-link-hover-border-color
+				border-bottom-color transparent
+				cursor default
+			 

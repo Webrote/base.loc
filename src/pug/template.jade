@@ -1,0 +1,49 @@
+//- 
+//- Самый главный шаблон, от которого наследуются все остальные
+//-
+	
+doctype html
+html
+	head(lang="ru")
+		meta(name="robots", content="noindex, nofollow")
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes")
+		block title
+			title Title
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+
+		block links
+			link(href="css/main.css", rel="stylesheet")
+
+		block template-styles
+			
+	body
+		.wrapper
+			//- Header
+			include includes/header.jade
+			//- Nav bar
+			//- include includes/navbar-toggle.pug
+			//- Menu top
+			//- include includes/menu-top.pug
+
+			//- Block Wrapper, to wrapp main content
+			//- such as 'sidebar', 'content'
+			block wrapper
+
+			
+			//- include includes/footer.pug
+
+		//- Button Go To Top
+		//- include includes/button-to-top.pug
+
+		//- Scripts on the bottom of page
+		//- script(type="text/javascript", src="js/jquery-1.8.3.js")
+		//- script(type="text/javascript", src="js/jquery.easing.js")
+		
+		block bottom-scripts
+			
+		//- script(type="text/javascript", src="js/main.js")

@@ -1,0 +1,111 @@
+*
+	^[0]
+	&:before
+	&:after
+		box-sizing border-box
+		
+html
+	// 10px
+	font-size 10px
+	-webkit-tap-highlight-color rgba(0, 0, 0, 0)
+		
+body
+	font-family $font-family-base
+	font-size $font-size-base
+	font-weight normal
+	font-style normal
+	line-height $line-height-base
+	color $text-color
+	background-color $body-bg    
+	
+
+// Make a Footer Stick to the Bottom of the Page
+// html, body
+// 	height 100%
+// .wrapper
+// 	display: table;
+// 	height: 100%; 
+// .page
+// 	display: table-row;
+// 	height: 100%;
+
+.wrapper
+	background-color $white 
+	// min-height 100%
+	// padding-bottom $rem-footer-height
+		
+	// @media screen and (max-width $screen-xs-max)
+	// 	overflow-x hidden 
+
+	
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea
+	font-family inherit
+	font-size inherit
+	line-height inherit
+	padding 0
+
+input,
+button
+	border none
+	background none
+	
+	&:focus
+		outline none
+		
+button
+	cursor pointer
+	
+// Links
+a
+	color $link-color
+	text-decoration none
+
+	&:hover,
+	&:focus
+		color $link-hover-color
+		text-decoration $link-hover-decoration
+		outline none
+		
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure
+	margin 0
+  
+
+// Images
+img
+	vertical-align middle
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive
+	img-responsive()
+
+
+// Horizontal rules	
+
+hr
+	margin-top $line-height-computed
+	margin-bottom $line-height-computed
+	border 0
+	border-top 1px solid $hr-border
+	
+// Only display content to screen readers
+//
+// See http://a11yproject.com/posts/how-to-hide-content
+
+.sr-only
+	position absolute
+	width 1px
+	height 1px
+	margin -1px
+	padding 0
+	overflow hidden
+	clip rect(0, 0, 0, 0)
+	border 0
