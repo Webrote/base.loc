@@ -1,0 +1,76 @@
+/* ---- pseudo select ----*/
+.pseudoselect
+	display block
+	padding-top 2px
+	text-decoration none
+	color $black
+	overflow hidden
+	white-space nowrap
+	text-overflow ellipsis
+	
+	&:hover
+	&:focus
+		text-decoration none
+		color $black
+		
+.drop
+	display none
+	position absolute
+	z-index $zindex-dropdown 
+	padding 0
+	margin 0
+	border 1px solid #eee 
+	background-color rgba(#FFF, 0.9)
+	width 100% 
+	left 0
+	top 105% 
+	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.5) 
+	
+	& li
+		cursor pointer
+		padding 5px 
+		border-bottom 1px solid rgba(#000,0.1)
+		transition background-color 150ms
+		&:hover
+			background rgba($orange,0.5) 
+		
+	& li:last-child
+		border-bottom none
+		
+/* ---- pseudo checkbox ----*/
+.pseudocheckbox
+	& label
+		position relative
+		padding-left 32px 
+		cursor pointer
+		font-size 16px
+		display inline-block
+		user-select none
+
+	& input[type="checkbox"]
+		position absolute
+		left -9999px
+		
+		&:not(:checked)
+		&:checked
+			& + label:before
+				content "" 
+				position absolute
+				left 0
+				top 2px
+				width 20px
+				height 20px
+				border 1px solid #D1D1D1 
+				border-radius 4px 
+				background-color #FFF 
+		
+		&:checked	
+			& + label:after
+				content "" 
+				position absolute
+				top 3px
+				left 1px
+				width 18px 
+				height 18px
+				background url("../img/stuff/sprite.png") no-repeat
+				background-position -39px -25px
