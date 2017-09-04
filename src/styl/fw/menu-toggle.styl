@@ -1,23 +1,91 @@
-.menu-toggle
+.menu-toggle 
 	position fixed
-	display none
-	width 22px
-	height 18px
 	top 20px
 	left 20px
+	padding 5px
 	cursor pointer
-	background-color $gray-lighter
-	z-index $zindex-menu-toggle
-	
-	& span
-		display block
-		width 100% 
-		height 2px
-		background-color $black
-		margin-bottom 6px 
+	transition-property opacity, filter
+	transition-duration 0.15s
+	transition-timing-function linear
+	font inherit
+	color inherit
+	text-transform none
+	background-color transparent
+	border 0
+	margin 0
+	vertical-align middle
+	overflow visible
+	display none
+
+	&:hover .menu-toggle__inner
+	&:hover .menu-toggle__inner::before
+	&:hover .menu-toggle__inner::after 
+		background-color $burger-hover-color
 		
-		&:nth-child(3)
-			margin-bottom 0
-			
+	@media screen and (min-width $screen-sm-min)
+		padding 10px
+		
 	@media screen and (max-width $grid-float-breakpoint-max)
-		display block
+		display inline-block
+
+
+.menu-toggle__box 
+	width $burger-width
+	height $burger-all-height
+	display inline-block
+	position relative
+
+.menu-toggle__inner
+	display block
+	top 50%
+	// margin-top -2px
+	
+.menu-toggle__inner
+.menu-toggle__inner::before
+.menu-toggle__inner::after 
+	width $burger-width
+	height $burger-one-height
+	background-color $burger-color
+	border-radius $burger-border-radius
+	position absolute
+	transition-property transform
+	transition-duration 0.15s
+	transition-timing-function ease
+	
+.menu-toggle__inner::before
+.menu-toggle__inner::after 
+	content ""
+	display block
+    
+.menu-toggle__inner::before 
+	top -10px
+.menu-toggle__inner::after 
+	bottom -10px
+	
+/*
+ * Squeeze
+ */
+.menu-toggle__squeeze .menu-toggle__inner 
+	transition-duration 0.075s
+	transition-timing-function cubic-bezier(0.55, 0.055, 0.675, 0.19)
+	
+.menu-toggle__squeeze .menu-toggle__inner::before 
+	transition top 0.075s 0.12s ease, opacity 0.075s ease
+
+.menu-toggle__squeeze .menu-toggle__inner::after 
+	transition bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+.menu-toggle__squeeze.is-active .menu-toggle__inner 
+	transform rotate(45deg)
+	transition-delay 0.12s
+	transition-timing-function cubic-bezier(0.215, 0.61, 0.355, 1)
+.menu-toggle__squeeze.is-active .menu-toggle__inner::before 
+	top 0
+	opacity 0
+	transition top 0.075s ease, opacity 0.075s 0.12s ease
+	
+.menu-toggle__squeeze.is-active .menu-toggle__inner::after 
+	bottom 0
+	transform rotate(-90deg)
+	transition bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1)
+	

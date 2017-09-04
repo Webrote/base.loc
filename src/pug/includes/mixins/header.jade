@@ -1,0 +1,91 @@
+mixin header_block()
+	header.header
+
+		//- Header COMPANY INFORMATION
+		.header__top
+			.container
+				.header__info
+					.header__item.header__item_logo
+						a.header__logo(href="/" title='Игродар')
+							img(src="../img/stuff/logo.png", alt="")
+
+					.header__item.header__item_phone
+						a.header__phone(href="tel:88002502945")
+							span 8 (800) 250-29-45
+
+						span.header__phone-title Телефон поддержки клиентов
+
+					.header__item.header__item_feedback
+						a.header__feedback.btn.red(href="") 
+							span Заказать звонок
+
+					.header__item.header__item_search
+						.header__search
+							form.search(action="")
+								input(type="text", placeholder="Поиск..")
+								button.i-magnifying(type="submit")
+
+					.header__item.header__item_login
+						a.header__login.i-login(href="") 
+							span Вход | Регистрация
+
+					.header__item.header__item_cart
+						a.header__cart-icon.cart-icon.i-cart(href="/cart.html")
+							span.cart-icon__count 999
+
+
+		//- Header MENU
+		.header__bottom
+			nav.nav.top-menu.collapse
+				//- Header mobile eleemnt
+				//- Close button & Search
+				.top-menu__mobile-top
+					.top-menu__mobile-close
+						a.top-menu__menu-close.i-close(href="")
+					.top-menu__mobile-search
+						.header__search
+							form.search(action="")
+								input(type="text", placeholder="Поиск..")
+								button.i-magnifying(type="submit")
+				//- Top Line Menu
+				.top-menu__top
+					.container
+						ul.top-menu__first
+							li
+								a.top-menu__drop-link(href="") О компании
+								ul.top-menu__drop-list
+									li
+										a(href="/simple-text.html") История компании
+									li
+										a(href="/simple-text.html") Вакансии
+									li
+										a(href="/simple-text.html") Наши партнеры
+									li
+										a(href="/simple-text.html") Рекламные материалы
+							li
+								a.active(href="/simple-text.html") Сотрудничество
+							li
+								a(href="/simple-text.html") Оплата и доставка
+							li
+								a(href="/news-list.html") Новости
+							li
+								a(href="/contacts.html") Контакты
+				
+				//- Bototm Line Menu
+				.top-menu__bottom
+					.container
+						ul.top-menu__second
+							li
+								a.top-menu__catalog-link.i-burger(href="") Каталог
+								+catalog_drop()
+								
+							li
+								a(href="") Новинки
+							li
+								a.active(href="") Акции
+							li
+								a(href="/brands.html") Бренды
+
+				.top-menu__mobile-bottom
+					a.header__login.i-login(href="") 
+						span Вход | Регистрация

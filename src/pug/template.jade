@@ -1,6 +1,13 @@
 //- 
 //- Самый главный шаблон, от которого наследуются все остальные
 //-
+
+include includes/mixins/mixins.jade
+
+block variables
+	- var page_heading_titile // заголовок страницы
+	- var breadcrumb_chain // Массив с хлебными крошками
+	- var body_class
 	
 doctype html
 html
@@ -18,24 +25,23 @@ html
 
 		block links
 			link(href="css/main.css", rel="stylesheet")
+		
+		// Api Map Yandex including
+		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-		block template-styles
+		block pixel-glass-templates
 			
-	body
+	body(class= (body_class))
 		.wrapper
 			//- Header
-			include includes/header.jade
-			//- Nav bar
-			//- include includes/navbar-toggle.pug
-			//- Menu top
-			//- include includes/menu-top.pug
+			+header_block()
 
 			//- Block Wrapper, to wrapp main content
 			//- such as 'sidebar', 'content'
 			block wrapper
 
 			
-			//- include includes/footer.pug
+			+footer_block()
 
 		//- Button Go To Top
 		//- include includes/button-to-top.pug
@@ -43,10 +49,9 @@ html
 		//- Scripts on the bottom of page
 		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
 		//- Validate form
-		script(type="text/javascript", src="jquery.validate.min.js")
+		//- script(type="text/javascript", src="js/jquery.validate.min.js")
 		//- script(type="text/javascript", src="js/jquery.easing.js")
 		
 		block bottom-scripts
-			script(type="text/javascript", src="js/menu-toggle.js")
-			script(type="text/javascript", src="js/validate-and-send-form.js")
-		//- script(type="text/javascript", src="js/main.js")
+			//- script(type="text/javascript", src="js/scripts.js")
+			//- script(type="text/javascript", src="js/validate-and-send-form.js")

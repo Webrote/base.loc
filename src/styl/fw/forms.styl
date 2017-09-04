@@ -20,15 +20,13 @@ legend
 	display block
 	width 100%
 	padding 0
-	margin-bottom $line-height-computed
 	font-size ($font-size-base * 1.5)
 	line-height inherit
-	color $legend-color
 	border 0
-	border-bottom 1px solid $legend-border-color
+	border-bottom 1px solid #ccc
 
 label
-	color $lebel-color
+	color #777
 	display inline-block
 	max-width 100% // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 	margin-bottom 5px
@@ -122,8 +120,6 @@ output
 	// Customize the `:focus` state to imitate native WebKit styles.
 	form-control-focus()
 
-	// Placeholder
-	placeholder()
 
 	// Unstyle the caret on `<select>`s in IE10+.
 	&::-ms-expand
