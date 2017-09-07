@@ -165,3 +165,7 @@ $burger-border-radius ?=		0
 $burger-width ?=				33px
 $burger-all-height ?=			24px
 $burger-one-height ?=			4px
+// растояние между элементами бургера
+$_burger-pseudo-between ?= ($burger-all-height - ($burger-one-height * 3)) / 2
+// величина смещение верхнего и нижнего элемента
+$burger-pseudo-offset ?= $_burger-pseudo-between + $burger-one-height

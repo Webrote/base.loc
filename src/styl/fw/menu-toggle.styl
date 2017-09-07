@@ -1,7 +1,7 @@
 .menu-toggle 
 	position fixed
 	top 20px
-	left 20px
+	right 20px
 	padding 5px
 	cursor pointer
 	transition-property opacity, filter
@@ -38,7 +38,7 @@
 .menu-toggle__inner
 	display block
 	top 50%
-	// margin-top -2px
+	transform translateY(-50%)
 	
 .menu-toggle__inner
 .menu-toggle__inner::before
@@ -58,9 +58,9 @@
 	display block
     
 .menu-toggle__inner::before 
-	top -10px
+	top -($burger-pseudo-offset)
 .menu-toggle__inner::after 
-	bottom -10px
+	bottom -($burger-pseudo-offset)
 	
 /*
  * Squeeze
