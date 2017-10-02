@@ -1,22 +1,21 @@
 .tabs
-	clearfix()
-	margin 0
-	padding 0
-	list-style none !important
-	
-	& > li
+	&__nav
 		margin 0
 		padding 0
-		display inline-block
-		&:before
+		list-style none !important
+	
+		& > li
+			margin 0
+			padding 0
+			display inline-block
+			&:before
+				display none !important
+				
+			& > a
+				display block
+				text-decoration none
+
+
+	&__content
+		&_hide
 			display none !important
-			
-		& > a
-			display block
-			text-decoration none
-
-
-.tabs-content
-	&_hide
-		display none !important
-			 

@@ -33,6 +33,7 @@ html
 			
 	body(class= (body_class))
 		.wrapper
+			+menu-toggle()
 			//- Header
 			+header_block()
 
@@ -41,7 +42,7 @@ html
 			block wrapper
 
 			
-			+footer_block()
+		+footer_block()
 
 		//- Button Go To Top
 		//- include includes/button-to-top.pug
