@@ -8,14 +8,18 @@ block prepend links
 
 block pixel-glass-templates
 
-block wrapper
+block page
 	+breadcrumb(breadcrumb_chain)
 	
-	#content
-		.container
-			block heading_titile
-
-			block content
+	.container
+		block heading_titile
+			
+		.row.content-wrap
+			
+			.col-lg-3.col-left
+				block sidebar
+			.col-lg-9.col-center
+				block content
 
 
 block prepend bottom-scripts

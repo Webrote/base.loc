@@ -20,14 +20,12 @@ var site =  {
 
 	// Сворачиваение меню
 	__menuToggle: function () {
-		var scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 
 		$('.menu-toggle').click(function () {
 			var _toggleMenu = $(this);
 
 			_toggleMenu.toggleClass('is-active');
-			$('body').css('overflow', 'hidden');
-			$('.nav.menu-top').toggleClass('shown');
+			$('.menu').toggleClass('shown');
 
 			if (!openMenu) {
 				openMenu = true;
@@ -41,7 +39,7 @@ var site =  {
 			$('body .overlay').click(function () {
 				$("body").css('overflow', 'visible');
 				$('body .overlay').remove();
-				$('.nav.menu-top').removeClass('shown');
+				$('.menu').removeClass('shown');
 				_toggleMenu.toggleClass('is-active');
 				openMenu = false;
 			})
@@ -101,20 +99,7 @@ var site =  {
 		$(window).on('resize', function(event) {
 			if (windowW !== $(window).width()) {
 				windowW = $(window).width();
-				if (windowW >= 1200) {
-					// $('.main__layer_logo').css('width', windowW+10);
-					$('.main__layer_1').css('width', windowW+60);
-					$('.main__layer_2').css('width', windowW+180);
-					$('.main__layer_3').css('width', windowW+200);
-					$('.main__layer_4').css('width', windowW+50);
-					$('.main__layer_5').css('width', windowW+20);
-					$('.main__layer_6').css('width', windowW+20);
-					$('#parallax .main__layer').parallax({
-						mouseport: $('.main')
-					});
-				} else {
-					$('.main__layer').trigger('freeze');
-				}
+				
 				if (windowW >= 768) {
 					$("body").css('overflow', 'visible');
 					$('body .overlay').remove();
@@ -157,11 +142,11 @@ var site =  {
 
 site.init = function () {
 	site.__menuToggle();
-	site.__brandSlider();
-	site.__colorBox();
-	site.__priceListHidder();
-	site.__windowResize();
-	site.__yaMap();
+	// site.__brandSlider();
+	// site.__colorBox();
+	// site.__priceListHidder();
+	// site.__windowResize();
+	// site.__yaMap();
 };
 
 $(function () {

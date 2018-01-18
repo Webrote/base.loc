@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 					// для pug-файлов использую расширение .jade
 					// что бы открывалась JADE подсветка в редакторе.
 					"index.html": "src/pug/index.jade",
-					"simple-text.html": "src/pug/simple-text-page.jade",
+					// "simple-text.html": "src/pug/simple-text-page.jade",
 				}
 			}
 		},
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
 
 		postcss: {
 			options: {
-				map: true,
+				map: false,
 				processors: [
 					require('autoprefixer')({
 						browsers: [

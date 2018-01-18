@@ -1,9 +1,9 @@
 mixin menu()
 	nav.nav.menu.collapse
 		ul
-			li
+			li.nav__has-child
 				a(href="") О компании
-				ul
+				ul.nav__drop
 					li
 						a(href="/simple-text.html") История компании
 					li
@@ -18,5 +18,14 @@ mixin menu()
 				a(href="/simple-text.html") Оплата и доставка
 			li
 				a(href="/news-list.html") Новости
-			li
+			li.nav__has-child
 				a(href="/contacts.html") Контакты
+				ul.nav__drop
+					li
+						a(href="/simple-text.html") История компании
+					li
+						a(href="/simple-text.html") Вакансии
+					li
+						a(href="/simple-text.html") Наши партнеры
+					li
+						a(href="/simple-text.html") Рекламные материалы

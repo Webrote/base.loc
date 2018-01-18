@@ -8,8 +8,14 @@
 		
 
 .logo
-	&:hover &__img
+	// &:hover &__img
+	// 	fill red
+	&:hover #logoPath1
+	&:hover #logoPath2
+	&:hover #logoPath3
+	&:hover #logoPath4
 		fill red
+		transform rotateY(360deg) 
 
 		
 	&__img
@@ -17,3 +23,19 @@
 		height 50px
 		fill #abc
 		transition fill ease-in-out 500ms
+		perspective 500px
+
+#logoPath1
+#logoPath2
+#logoPath3
+#logoPath4
+	transition all ease-in-out 1000ms 
+	transform-origin center center
+	transform-style preserve-3d
+	
+#logoPath2
+	transition-delay 100ms 
+#logoPath3
+	transition-delay 200ms 
+#logoPath4
+	transition-delay 300ms 

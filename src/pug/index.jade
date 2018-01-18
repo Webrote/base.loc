@@ -1,15 +1,15 @@
-extends template.jade
+extends templates/template.jade
 
 block variables
-	- var body_class = "index"
+	- var page_class = "index"
 	
 block prepend links
 
 block pixel-glass-templates
 	//- include ../../pixel-glass-teplates/index-lg.html
 
-block wrapper
-	include includes/pages/index/content.jade
+block page
+	include pages/index/content.jade
 
 
 

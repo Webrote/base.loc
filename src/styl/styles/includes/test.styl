@@ -1,3 +1,172 @@
-.test
-	display flex
-	justify-content space-between
+.bestsales
+	&__tab-links
+		list-style-type none
+		font-size 0
+		text-align center
+		margin-bottom 20px
+		
+		& li
+			display inline-block
+			font-size 14px
+			margin 0 5px 
+			
+			a
+				display block
+				position relative
+				padding 10px 10px
+				color #424242
+				background-color #EAEAEA 
+				transition all 200ms ease-in-out
+				
+				&:before
+					content "" 
+					absolute top 100% left 50%
+					transform translateX(-50%)
+					width 0
+					height 0
+					border-left 5px solid transparent
+					border-right 5px solid transparent
+					border-top 5px solid transparent
+					transition border-color 200ms ease-in-out
+						
+				&:hover
+				&:focus
+					background-color #ccc 
+					text-decoration none
+					
+				&.active
+					color #fff 
+					background-color #FABF01 
+					&:before
+						border-top-color #FABF01
+
+
+	&__tab
+		&-wrap
+			position relative
+			
+		&-content
+			opacity 1
+			visibility visible
+			transition opacity 300ms ease-in-out
+			&_hide
+				absolute top 0 left 0
+				opacity 0
+				visibility hidden
+			
+	&__wrap
+		margin-left -10px
+		font-size 0
+		
+	&__item
+		position relative
+		display inline-block
+		vertical-align top
+		font-size 14px
+		padding-bottom 20px
+		margin-left 10px
+		border #D1CCBD solid 4px
+		width calc(25% - 10px)
+		text-align center
+		
+		
+		&-img
+			height 203px
+			display block
+			overflow hidden
+			margin-bottom 20px
+			
+			& img
+				width 100% 
+				height auto
+			
+		&-title
+			display block
+			font-size 20px
+			font-weight 700 
+			color #424242 
+			line-height 1.2
+			margin-bottom 16px
+			
+			&:hover
+			&:focus
+				text-decoration none
+				color #424242 
+			
+		
+		&-material
+			font-size 14px
+			color #939393 
+			margin-bottom 18px
+			
+		&-price
+			font-size 24px
+			font-weight 700 
+			color #F58F18 
+			
+
+	&__action-labels-wrap
+		absolute top 5px left -4px
+
+.action-label
+	position relative
+	width 63px
+	height 28px
+	margin-bottom 12px
+	
+	&:before
+	&:after
+		content "" 
+		absolute left 100%
+		display block
+		width 0
+		height 0
+	
+	span
+		display inline-block
+		font-family Roboto Condensed 
+		font-weight bold
+		font-size 12px
+		color #FFF 
+		line-height 1
+		absolute top 50% left 50%
+		transform translate(-50%, -50%)
+		
+	&_action
+		background linear-gradient(to right, #fc6e48, #d80003)
+		
+		&:before
+			top 0 
+			border-top 13px solid #d80003
+			border-right 10px solid transparent
+			
+		&:after
+			bottom 0
+			border-bottom 13px solid #d80003
+			border-right 10px solid transparent
+			
+	&_new
+		background linear-gradient(to right, #71c64b, #008700)
+		
+		&:before
+			top 0 
+			border-top 13px solid #008700
+			border-right 10px solid transparent
+			
+		&:after
+			bottom 0
+			border-bottom 13px solid #008700
+			border-right 10px solid transparent
+			
+	&_hit
+		background linear-gradient(to right, #ffbb6e, #ff9000)
+		
+		&:before
+			top 0 
+			border-top 13px solid #ff9000
+			border-right 10px solid transparent
+			
+		&:after
+			bottom 0
+			border-bottom 13px solid #ff9000
+			border-right 10px solid transparent
